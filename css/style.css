@@ -1,0 +1,107 @@
+.inv-temp{
+    
+}
+
+.invoice-panel{
+    box-shadow: 1px 2px 20px rgba(0, 0, 0, .5);
+    
+    /* border-width: 1px;
+    border-color: black;    
+    border-style: solid; */
+}
+.T_image_top{
+    
+}
+.invoice-logo{
+    left:20%;
+    top: 5%;
+    position: absolute;
+}
+.invoice-title{
+    top: 5%;
+    font-size: 60px;
+    font-family:  Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    position: absolute;
+    left: 65%;
+    float: right;
+    text-align: center;
+    text-transform: uppercase;
+
+}
+
+.invoice-info{
+    position: relative;
+    padding: 10%;
+    
+}
+.invoice-bottom{
+    padding-bottom: 15px;
+}
+.invoice-label{
+    display: inline-block;
+    width: 30%;
+    text-align: right;
+}
+
+.invoice-input{
+    display: inline-block;
+    width: auto;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: none;   
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+}
+.invoice-content{
+    width: 100%;
+}
+.invoice-table{
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+  
+}
+
+.calc{
+    text-align: right;
+}
+
+.signholder{
+    width: 200px;
+    height: 200px;
+}
+
+.invoice-footer-text{
+    position: absolute;
+    font-weight: 100;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial;  
+    color: black;
+    left: 65%;
+    bottom: 5%;
+    float: right;
+    text-align: center;
+    
+  
+}
+
+.invoice-input-2{
+    display: inline-block;
+    width: auto;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;    
+    border: none;   
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    text-align: center;
+}
