@@ -3,10 +3,10 @@ $(document).ready(function() {
         translate();
 }, 3000) });
 
-var data = null;
-
 function translate(){
  
+    var data = null;
+
     var number = $("#totalamount").text();
     
     var xhr = new XMLHttpRequest();
