@@ -15,7 +15,8 @@
 }
 .invoice-logo{
     left:20%;
-    top: 5%;
+    transform: scale(0.85);
+    top: 2.5%;
     position: absolute;
 }
 .invoice-title{
