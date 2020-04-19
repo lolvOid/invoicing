@@ -1,10 +1,12 @@
-$(document).ready(function() { setInterval(function(){
-translate();
+$(document).ready(function() { 
+    setInterval(function(){
+        translate();
 }, 3000) });
 
+var data = null;
 
 function translate(){
-    var data = null;
+ 
     var number = $("#totalamount").text();
     
     var xhr = new XMLHttpRequest();
@@ -17,7 +19,7 @@ function translate(){
            
             var text = responseText.contents;
             $("#inwords").attr("value",text["translated"]);
-           
+           console.log(text["translated"]);
         }
     });
     
