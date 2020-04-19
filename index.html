@@ -82,7 +82,7 @@
                                 </div>
 
                                 <div class="form-group row d-block">
-                                    <label for="invoiceID" class="invoice-label">Attention:</label>
+                                    <label for="invoiceID" class="invoice-label">Invoice ID:</label>
                                     <input type="text" id="invoiceID" name="invoiceID" class="invoice-input" value="025" readonly>
                                 </div>
 
@@ -162,10 +162,13 @@
                         </div>
                         <!-- In Words -->
                         <div class="form-group row">                          
-                            <div class="col-md-6 d-block">
-                                <label for="inwords" class="invoice-label">Total in Words:</label>
-                                <input type="text" id="inwords" name="inwords" class="invoice-input" placeholder="Enter Amount">
-                                <a class="btn btn-info text-white" id="convertToText"> Convert Words</a>
+                            <div class="col-md-6 d-flex">
+                                <label for="inwords" class="invoice-label ">Total in Words:</label>
+                                <textarea id="inwords" name="inwords" class="invoice-area " rows="3" cols="30" placeholder="Enter Amount"></textarea>
+                                <div class="input-group-append">
+                                    <a class="btn btn-info text-white input-group-button " id="convertToText">Convert</a>
+                                </div>
+                                
                             </div>
                         </div>
                         <!-- Sign -->

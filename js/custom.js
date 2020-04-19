@@ -33,9 +33,9 @@ function updateName(){
         $("#clientname2").text("( "+$("#clientname").val()+" )");
     }
     if($("#attention").val()==''){
-        $("#attentionname").attr("placeholder",("( "+ $("#attention").attr("placeholder") + " )"));    
+        $("#attentionname").attr("placeholder",( $("#attention").attr("placeholder")));    
     }else{
-        $("#attentionname").attr("value","( "+$("#attention").val()+" )");
+        $("#attentionname").attr("value",$("#attention").val());
     }
 
     

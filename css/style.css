@@ -111,3 +111,14 @@
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     text-align: center;
 }
+
+.invoice-area{
+    overflow: hidden;
+    resize: none;
+    border: none;
+    vertical-align: middle;
+}
+.convertToText{
+    vertical-align: middle;
+    position: absolute;
+}

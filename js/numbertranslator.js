@@ -21,8 +21,8 @@ function translate(){
             var responseText = JSON.parse(this.responseText);
            
             var text = responseText.contents;
-            $("#inwords").attr("value",text["translated"]);
-           console.log(text["translated"]);
+            $("#inwords").text(text["translated"]);
+          
         }
     });
     
