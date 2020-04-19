@@ -1,6 +1,8 @@
 $(document).ready(function() {  });
-
-   translate();
+setInterval(() => {
+  translate(); 
+}, 5000);
+   
 
 function translate(){
     var data = null;
