@@ -1,8 +1,7 @@
 
 $(document).ready(function() {
 
-
-    updatePrice();
+    update();
 
     $("#save").click(function() {
         $("#invoice-form").submit();
@@ -18,6 +17,32 @@ $(document).ready(function() {
 
  });
 
+
+
+function update(){
+
+    updatePrice();
+    updateName();
+    requestAnimationFrame(update);
+}
+
+function updateName(){
+    if($("#clientname").val()==''){
+        $("#clientname2").text("( "+ $("#clientname").attr("placeholder") + " )");    
+    }else{
+        $("#clientname2").text("( "+$("#clientname").val()+" )");
+    }
+    if($("#attention").val()==''){
+        $("#attentionname").attr("placeholder",("( "+ $("#attention").attr("placeholder") + " )"));    
+    }else{
+        $("#attentionname").attr("value","( "+$("#attention").val()+" )");
+    }
+
+    
+
+}
+
+
 function calculateTotal(price,advPercent){
     var totalAmount = price;
     var advanceAmount =( advPercent/100) *  totalAmount ;
@@ -29,7 +54,8 @@ function calculateTotal(price,advPercent){
 }
 
 
- function updatePrice(){
+
+function updatePrice(){
     
 
     var totalPrice = 0;
@@ -39,7 +65,6 @@ function calculateTotal(price,advPercent){
     var cost = qty.val() * $("#price").val();
     $("#cost").text(cost);
     calculateTotal(cost,30);
-        
-    requestAnimationFrame(updatePrice);
+
  }
 

@@ -101,12 +101,12 @@
     display: inline-block;
     width: auto;
     
-
+    background-color: #fff;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
     color: #495057;
-    background-color: #fff;    
+        
     border: none;   
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     text-align: center;

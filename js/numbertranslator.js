@@ -1,10 +1,11 @@
-var data = null;
-$("#inwords").attr("readonly","true");
-$(document).ready(function() { translate();});
+$(document).ready(function() {  });
+
+   translate();
 
 function translate(){
-   
+    var data = null;
     var number = $("#totalamount").text();
+    
     var xhr = new XMLHttpRequest();
     xhr.withCredentials = true;
     
@@ -12,7 +13,7 @@ function translate(){
         if (this.readyState === this.DONE) {
             
             var responseText = JSON.parse(this.responseText);
-            
+           
             var text = responseText.contents;
             $("#inwords").attr("value",text["translated"]);
            
@@ -25,6 +26,4 @@ function translate(){
     xhr.setRequestHeader("x-funtranslations-api-secret", "");
     
     xhr.send(data);
-
-    requestAnimationFrame(translate());
 }
