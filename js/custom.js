@@ -1,9 +1,8 @@
 
- $("#cost").text(0);
 $(document).ready(function() {
 
 
-    
+    updatePrice();
 
     $("#save").click(function() {
         $("#invoice-form").submit();
@@ -15,25 +14,32 @@ $(document).ready(function() {
 
     });
 
-    updatePrice();
+   
 
  });
 
+function calculateTotal(price,advPercent){
+    var totalAmount = price;
+    var advanceAmount =( advPercent/100) *  totalAmount ;
+    var finalAmount = totalAmount - advanceAmount;
+
+    $("#totalamount").text(totalAmount);
+    $("#advanceamount").text(advanceAmount) ;
+    $("#finalamount").text(finalAmount);
+}
+
 
  function updatePrice(){
-        
+    
 
     var totalPrice = 0;
     
     var qty = $("#qty");
     var price = $("#price");
-    qty.keyup(function(){
-        price.keyup(function(){
-            var cost = qty.val() * $("#price").val();
-            $("#cost").text(cost);
-        })
-    })
-    
+    var cost = qty.val() * $("#price").val();
+    $("#cost").text(cost);
+    calculateTotal(cost,30);
+        
+    requestAnimationFrame(updatePrice);
  }
-
 
