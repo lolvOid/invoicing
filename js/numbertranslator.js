@@ -1,8 +1,7 @@
-$(document).ready(function() {  });
-setInterval(() => {
-  translate(); 
-}, 5000);
-   
+$(document).ready(function() { setInterval(function(){
+translate();
+}, 3000) });
+
 
 function translate(){
     var data = null;
