@@ -4,7 +4,8 @@
 
 .invoice-panel{
     box-shadow: 1px 2px 20px rgba(0, 0, 0, .5);
-    
+    width: 2480px;
+    height: auto;
     /* border-width: 1px;
     border-color: black;    
     border-style: solid; */
@@ -36,6 +37,7 @@
     
 }
 .invoice-bottom{
+    
     padding-bottom: 15px;
 }
 .invoice-label{
@@ -68,7 +70,11 @@
     color: #212529;
   
 }
-
+.icon-box{
+    border: none !important;
+    width: 150px;
+    text-align: left;
+}
 .calc{
     text-align: right;
 }
