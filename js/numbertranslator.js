@@ -1,7 +1,10 @@
 $(document).ready(function() { 
-    setInterval(function(){
-        translate();
-}, 3000) });
+
+    $("#convertToText").click(function(){
+       translate();
+    });
+
+});
 
 function translate(){
  
