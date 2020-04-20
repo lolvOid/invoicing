@@ -6,6 +6,9 @@ $(document).ready(function() {
 
 });
 
+var currText = "dollars";
+currencyUpdate();
+
 function translate(){
  
     var data = null;
@@ -21,7 +24,7 @@ function translate(){
             var responseText = JSON.parse(this.responseText);
            
             var text = responseText.contents;
-            $("#inwords").text(text["translated"]+" "+currencyUpdate());
+            $("#inwords").text(text["translated"]+" "+currText);
           
         }
     });
@@ -38,12 +41,13 @@ function currencyUpdate(){
     
    
     $("#mmk").click(function(){
-        currText = "myanmar kyats";
+        currText = "kyats";
+
     });
 
     $("#usd").click(function(){
         currText = "dollars";
     });
     
-    return currText;
+    
 }
