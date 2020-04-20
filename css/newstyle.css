@@ -1,65 +1,76 @@
-nav{
-    z-index: 999;
+body{
+    background-color: white;
 }
+
+.invoice-panel{
+    transform-origin: top;
+    position: relative;
+    left: 15%;
+    width:210mm; 
+    height:297mm;
+    background-color: white;
+
+    box-shadow: 1px 2px 20px rgba(0, 0, 0, .5);
+}
+@media (min-width: 768px) and (max-width: 1024px){
+    .invoice-panel {
+        left: 8%;
+    }
+}
+@media (min-width: 1025px) and (max-width: 1280px){ 
+    .invoice-panel {
+        left: 8%;
+    }
+} 
 
 
 .wrapper{
-    
-  
-    
-}
-@media print {
-    .invoice-panel{
-        width: 21cm;
-        height: 29.7cm;
-        margin: 30mm 45mm 30mm 45mm; 
-        /* change the margins as you want them to be. */
-   } 
-}
-.invoice-panel{
-    zoom: 1;
-    box-shadow: 1px 2px 20px rgba(0, 0, 0, .5);
-    width: 2480px;
-    height: 3508px;
-    
-    transform-origin: top;
 
-    /* border-width: 1px;
-    border-color: black;    
-    border-style: solid; */
+    width: 100%;
+}
+.invoice-font{
+    font-size: 0.85em;
+}
+.invoice-content{
+    position: relative;
 }
 
 .invoice-logo{
-    left:20%;
-    transform: scale(0.85);
-    top: 2.5%;
+    
+    left:15%;
+    transform: scale(0.6);
+   
     position: absolute;
 }
 .invoice-title{
-    top: 5%;
-    font-size: 60px;
+    top:3.5%;
+    left: 68%;
+    font-size: 40px;
     font-family:  Verdana, Geneva, Tahoma, sans-serif;
     color: white;
     position: absolute;
-    left: 65%;
+    
     float: right;
     text-align: center;
     text-transform: uppercase;
 
 }
 
+.invoice-top-img{
+    width: 100%;
+
+}
+
 .invoice-info{
     position: relative;
-    padding: 10%;
+    padding: 10% 10% 0 10%;
     
 }
-.invoice-bottom{
-    
-    padding-bottom: 15px;
-}
+
 .invoice-label{
     display: inline-block;
     width: 30%;
+    font-size: 0.8em;
     text-align: right;
 }
 
@@ -68,7 +79,7 @@ nav{
     width: auto;
     height: calc(1.5em + 0.75rem + 2px);
     padding: 0.375rem 0.75rem;
-    font-size: 1rem;
+    font-size: 0.8em;
     font-weight: 400;
     line-height: 1.5;
     color: #495057;
@@ -78,15 +89,13 @@ nav{
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
 }
-.invoice-content{
+
+.invoice-table-content{
+    font-size: 0.8em;
     width: 100%;
 }
-.invoice-table{
-    width: 100%;
-    margin-bottom: 1rem;
-    color: #212529;
-  
-}
+
+
 .icon-box{
     border: none !important;
     width: 150px;
@@ -96,30 +105,43 @@ nav{
     text-align: right;
 }
 
+.invoice-sign{
+    font-size: 0.8em;
+}
+
 .signholder{
-    width: 200px;
-    height: 200px;
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+.invoice-bottom{
+    bottom: 0;
+    position: relative;
+}
+
+.invoice-bottom-logo{
+    
+    position: absolute;    
 }
 
 .invoice-footer-text{
-    position: absolute;
-    font-weight: 100;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial;  
-    color: black;
-    left: 65%;
-    bottom: 5%;
-    float: right;
-    text-align: center;
     
-  
+    left: 55%;
+    margin-top: 5%;
+    position: absolute;
+    font-size: 0.7em;    
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;    
+    text-align: center;
 }
 
 .invoice-input-2{
     display: inline-block;
     width: auto;
-    
+ 
     background-color: #fff;
-    font-size: 1rem;
+    font-size: 0.8em;
     font-weight: 400;
     line-height: 1.5;
     color: #495057;
@@ -130,13 +152,17 @@ nav{
 }
 
 .invoice-area{
+    margin-left: 10px;
     overflow: hidden;
     resize: none;
     border: none;
+    font-size: 0.8em;
     vertical-align: middle;
 }
+
 .convertToText{
-    vertical-align: middle;
+    font-size: 0.8em;
+    
     position: absolute;
 }
 

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Editor</title>
+    
+    <link rel="stylesheet" href="css/bootstrap.css.map">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fontawesome.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"> Invoicing</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Edit</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Options
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" id="save">Save</a>
+                <a class="dropdown-item" id="export">Export</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" id="print">Print</a>
+              </div>
+            </li>
+           
+          </ul>
+
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+    </nav>
+
+    
+        <div class="wrapper" >
+            <div class="row mb-2 mt-5">
+            
+                <div class="invoice-panel" id="invoiceholder">
+    
+                    <div class="mt-3 invoice-top">
+                        <img src="images/logo.png" width="200px" class="float-left invoice-logo" alt="">
+                        <h1 class="invoice-title">invoice</h1>
+                        <img src="images/T_top.png" width="100%" class="T_image_top" alt="">
+                    </div>
+    
+                    
+                    <div class="invoice-info">
+                        
+                        <form action=""id="invoice-form">
+                            <!-- Info -->
+                            <div class="row">
+                                <div class="col-md-6 ">
+                                    <div class="form-group row d-block">
+                                        <label for="clientname" class="invoice-label">Client Name:</label>
+                                        <input type="text" id="clientname" name="clientname" class="invoice-input" placeholder="Enter Name">
+                                    </div>
+    
+                                    <div class="form-group row d-block">
+                                        <label for="attention" class="invoice-label">Attention:</label>
+                                        <input type="text" id="attention" name="attention" class="invoice-input" placeholder="Enter Attention">
+                                    </div>
+                                
+                                </div>
+    
+                                <div class="col-md-6 ">
+                                    <div class="form-group row d-block">
+                                        <label for="start-date" class="invoice-label">Date:</label>
+                                        <input type="date" id="start-date" name="start-date" class="invoice-input">
+                                    </div>
+    
+                                    <div class="form-group row d-block">
+                                        <label for="invoiceID" class="invoice-label">Invoice ID:</label>
+                                        <input type="text" id="invoiceID" name="invoiceID" class="invoice-input" value="025" readonly>
+                                    </div>
+    
+                                    <div class="form-group row d-block">
+                                        <label for="due-date" class="invoice-label">Invoice Due Date:</label>
+                                        <input type="date" id="due-date" name="due-date" class="invoice-input">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Table -->
+                            <div class="row">
+                                <div class="invoice-content">
+                                    <table class="table invoice-table">
+                                      
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Sr No.</th>
+                                                <th scope="col">Description</th>
+                                                <th scope="col">Qty</th>
+                                                <th scope="col" class="calc">Price ($)</th>
+                                                <th scope="col">Total ($)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>                                        
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                
+                                                <td>                                           
+                                                        <input type="text" id="desc" name="desc" style="width:auto; height:auto;text-align: left    ;" class="invoice-input-2" placeholder="Enter Description">                                            
+                                                </td>
+                                                <td>                                          
+                                                        <input type="text" id="qty" style="width: 50px; text-align: center;" name="desc" class="invoice-input-2" value="1">                           
+                                                </td>
+                                                <td class="calc">                                           
+                                                        <input type="text" id="price"style="width: 100px; text-align:right;" name="price" class="invoice-input-2" placeholder="Price" value="1500">                                      
+                                                </td>
+                                                <td id="cost">0</td>
+                                
+                                            </tr>
+    
+                                            <tr>
+                                                <th scope="row"></th>
+                                                <td></td>
+                                                <td></td>
+                                                <td class="calc">Total :</td>
+                                                <td id="totalamount">0</td>
+                                            </tr>
+    
+                                            <tr>
+                                                <th scope="row"></th>
+                                                <td></td>
+                                                <td></td>
+                                                <td class="calc">Advance Amount :</td>
+                                                <td id="advanceamount">0</td>
+                                            </tr>
+    
+                                            <tr>
+                                                <th scope="row"></th>
+                                                <td></td>
+                                                <td></td>
+                                                <td class="calc">Final Amount :</td>
+                                                <td id="finalamount">0</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- <ul class=" list-inline">
+                                        <li class="list-inline-item">  <a class="mb-3 float-md-right btn btn-danger text-white" id="deleterow"  >
+                                            <i class="fa fa-1x fa-trash"></i></span></a></li>
+    
+                                        <li class="list-inline-item">  <a class="mb-3 float-md-right btn btn-success text-white" id="addrow" >
+                                            <i class="fa fa-1x fa-plus-circle"></i></span></a></li>
+                                        
+                                    </ul>     -->
+                                </div>
+                            
+                            </div>
+                            <!-- In Words -->
+                            <div class="form-group row">                          
+                                <div class="col-md-6 d-flex">
+                                    <label for="inwords" class="invoice-label ">Total in Words:</label>
+                                    <textarea id="inwords" name="inwords" class="invoice-area " rows="3" cols="30" placeholder="Enter Amount"></textarea>
+                                    <div class="input-group-append">
+                                        <a class="btn btn-info text-white input-group-button " id="convertToText">Convert</a>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <!-- Sign -->
+                            <div class="row">
+                                <div class="col-md-4"></div>
+                                <div class="col-md-4">
+                                    <div class="signholder"></div>
+                                    <div class="invoice-sign  text-center">
+                                        <div class="form-group">
+                                            <input type="text" id="attentionname" name="attentionname" class="invoice-input-2" placeholder="(Attention Name)" readonly>
+                                            <br>
+                                            <span id="clientname2"> ( Client Name )</span>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="signholder"></div>
+                                    <div class="invoice-sign text-center">
+                                        <div class="form-group">
+                                            <input type="text" id="signname" name="signname" class="invoice-input-2" placeholder="(Enter YourName)" >
+                                            <br>
+                                            <span id="companyname"> ( HEX Creative ) </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+    
+                            <input type="submit" style="display:none" />
+                        </form>
+                    </div>
+                
+    
+                    <div class="mt-3 invoice-bottom">
+                                    
+                        <img src="images/T_bottom.png" width="100%" alt="">
+    
+                        <p class="invoice-footer-text">
+                            No.104, Thayettaw 5th Street,KyeeMyinDine <br> +09 790695936 , 09789320970 <br> hello@hexcreativemm.co <br> 
+    
+                        </p>
+                    
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="container">
+        <!-- <div class="row m-5 position-relative">
+            <a id="btn-Preview-Image" class="btn btn-block btn-dark text-white">Preview</a>
+
+            <div id="preivewImage"></div>
+        </div> -->
+
+        <div class="floating-btn">
+            <ul>
+                <li> <a id="zoomin"><i class="fa fa-search-plus btn-float-right-bottom"></i></a></li>
+                <li> <a id="zoomout"><i class="fa fa-search-minus btn-float-right-bottom"></i></a></li>
+            </ul>
+           
+            
+        </div>
+        
+        </div>
+
+  
+    <script src="js/jquery-3.5.0.min.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- <script>var exports = {"__esModule": true};</script> -->
+    <script src="js/fontawesome.js"></script>
+    <script src="js/all.js"></script>
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-alpha.12/dist/html2canvas.js"></script>
+    <script src="js/numbertranslator.js"></script>
+    <!-- <script type="module" src="js/imageconvert.js"></script> -->
+    <script  src="js/custom.js"></script>
+    <script src="js/pdfcovert.js"></script>
+    
+</body>
+</html>
