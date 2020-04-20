@@ -21,7 +21,7 @@ function translate(){
             var responseText = JSON.parse(this.responseText);
            
             var text = responseText.contents;
-            $("#inwords").text(text["translated"]);
+            $("#inwords").text(text["translated"]+" "+currencyUpdate());
           
         }
     });
@@ -32,4 +32,18 @@ function translate(){
     xhr.setRequestHeader("x-funtranslations-api-secret", "");
     
     xhr.send(data);
+}
+
+function currencyUpdate(){
+    
+   
+    $("#mmk").click(function(){
+        currText = "myanmar kyats";
+    });
+
+    $("#usd").click(function(){
+        currText = "dollars";
+    });
+    
+    return currText;
 }

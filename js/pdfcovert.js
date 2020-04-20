@@ -1,45 +1,75 @@
 
-var element = document.getElementById("#invoiceholder");
+var div = document.getElementById("invoiceholder");
 var node = $("#invoiceholder");
-
+var invoice_id = $("#invoiceID").val();
+var page = $("#invoiceholder");
 
 $(document).ready(function() {
-    var _export =document.querySelectorAll("#export");
+    var _export = document.querySelectorAll("#export");
+    var _print  = document.querySelectorAll("#print");
 
     _export.forEach(element => {
         element.addEventListener('click',function(e){           
-                genPDF();
+                convert();
+        });
+    });
+
+    _print.forEach(element => {
+        element.addEventListener('click',function(e){           
+                print(div);
         });
     });
     
 
 });
 
-function genPDF(){
-    var page = $("#invoiceholder");
-    // page.css("transform","scale("+ 0.8+")");
+function print(divName) {
+    
+    var contents = node.html();
+        var frame1 = $('<iframe />');
+        frame1[0].name = "frame1";
+        frame1.css({ "position": "absolute", "top": "-1000000px" });
+        $("body").append(frame1);
+        var frameDoc = frame1[0].contentWindow ? frame1[0].contentWindow : frame1[0].contentDocument.document ? frame1[0].contentDocument.document : frame1[0].contentDocument;
+        frameDoc.document.open();
+        //Create a new HTML document.
+        frameDoc.document.write('<html><head><title>DIV Contents</title>');
+        frameDoc.document.write('</head><body>');
+        //Append the external CSS file.
+        frameDoc.document.write('<link href="../css/newstyle.css" rel="stylesheet" type="text/css" />');
+        frameDoc.document.write('<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />');
+        frameDoc.document.write('<link href="../css/bootstrap.css.map" rel="stylesheet" type="text/css" />');        
+        frameDoc.document.write('<link href="../css/fontawesome.css" rel="stylesheet" type="text/css" />');
+        //Append the DIV contents.
+        frameDoc.document.write(contents);
+        frameDoc.document.write('</body></html>');
+        frameDoc.document.close();
+        setTimeout(function () {
+            window.frames["frame1"].focus();
+            window.frames["frame1"].print();
+            frame1.remove();
+        }, 500);
+ 
+}
+
+function convert(){
     $("#convertToText").hide();
-    var HTML_Width = node.width();
-    var HTML_Height = node.height();
-    var top_left_margin = 15;
-    var PDF_Width = HTML_Width + (top_left_margin * 2);
-    var PDF_Height = (PDF_Width * 1.8) + (top_left_margin * 2);
-    var canvas_image_width = HTML_Width;
-    var canvas_image_height = HTML_Height;
 
-    var totalPDFPages = Math.ceil(HTML_Height / PDF_Height) - 1;
-    html2canvas(node[0]).then(function (canvas) {
-        var imgData = canvas.toDataURL("images/jpeg", 1.0);
-        var pdf = new jsPDF('p', 'pt', "[PDF_Width, PDF_Height]");
-        pdf.addImage(imgData, 'JPG', top_left_margin, top_left_margin, canvas_image_width, canvas_image_height);
-        for (var i = 1; i <= totalPDFPages; i++) { 
-            pdf.addPage(PDF_Width, PDF_Height);
-            pdf.addImage(imgData, 'JPG', top_left_margin, -(PDF_Height*i)+(top_left_margin*4),canvas_image_width,canvas_image_height);
-        }
-        pdf.save("invoice.pdf");
-        // element.hide();
-        
-    });
+    page.css("transform","scale("+ 1+")");
 
-
+    html2canvas(div)
+      .then((canvas) => {
+        const imgData = canvas.toDataURL('../images/png');
+        const pdf = new jsPDF({
+          orientation: 'potrait',
+        });
+        const imgProps= pdf.getImageProperties(imgData);
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+        pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+        pdf.save('invoice_'+invoice_id+'.pdf');
+        $("#convertToText").show();
+      });
+    
+    
 }
