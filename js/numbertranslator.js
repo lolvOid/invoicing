@@ -28,7 +28,7 @@ function translate(){
     
     xhr.open("GET", "https://numbers-spell.p.rapidapi.com/numbers?text="+number);
     xhr.setRequestHeader("x-rapidapi-host", "numbers-spell.p.rapidapi.com");
-    xhr.setRequestHeader("x-rapidapi-key", "6ca6807e19msh5d007a08cb99dbfp162df9jsna652f809f1d5");
+    xhr.setRequestHeader("x-rapidapi-key", "bae8ac0f06mshb1c40c0f1358dabp196ffdjsn235588ef714c");
     xhr.setRequestHeader("x-funtranslations-api-secret", "");
     
     xhr.send(data);
