@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invoice Editor</title>
     
-    <link rel="stylesheet" href="css/bootstrap.css.map">
+    <!-- <link rel="stylesheet" href="css/bootstrap.css.map"> -->
     <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/custom.css">
@@ -65,7 +65,7 @@
     <div class="container">
         <div class="wrapper">
             <div class="row mt-5 invoice-main-area ">
-                <div class="invoice-panel dragscroll" id="invoiceholder">
+                <div class="invoice-panel" id="invoiceholder">
                     <div class="invoice-content">
                         <div class="invoice-top">
                             <img src="images/logo.png" width="200px" class="float-left invoice-logo" alt="">
@@ -178,11 +178,11 @@
 
                                 <!-- In Words -->
                                 <div class="row mb-3">                          
-                                    <div class="">
+                                    <div class="area">
                                        
                                         <div class="invoice-area-container">
                                             <label for="inwords" class="invoice-area-label ">Total in Words:</label>
-                                            <textarea id="inwords" name="inwords" class="invoice-area " rows="3" cols="50" placeholder="Enter Amount"></textarea>
+                                            <textarea id="inwords" name="inwords" class="invoice-area " rows="3" cols="50" placeholder="Click Show!"></textarea>
                                             <a class="convert-button btn btn-block btn-info text-white" id="convertToText">Show</a>
                                         </div>
                                     </div>
@@ -267,7 +267,7 @@
     <!-- <script type="module" src="js/imageconvert.js"></script> -->
     <script  src="js/custom.js"></script>
     <script src="js/pdfcovert.js"></script>
-    <script type="text/javascript" src="https://cdn.rawgit.com/asvd/dragscroll/master/dragscroll.js"></script>
+
 
 </body>
 </html>
