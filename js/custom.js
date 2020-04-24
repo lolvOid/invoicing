@@ -71,11 +71,16 @@ function updateName(){
 }
 
 
-function calculateTotal(price,advPercent){
-    var totalAmount = price;
+function calculateTotal(price = [],advPercent){
+    var totalAmount = 0;
+    
+    for(var i in price){
+        totalAmount += price[i];
+    }
+    
     var advanceAmount =( advPercent/100) *  totalAmount ;
     var finalAmount = totalAmount - advanceAmount;
-
+    var cost 
     $("#totalamount").text(totalAmount);
     $("#advanceamount").text(advanceAmount) ;
     $("#finalamount").text(finalAmount);
@@ -84,14 +89,21 @@ function calculateTotal(price,advPercent){
 
 
 function updatePrice(){
-    
+    var costText = document.querySelectorAll("#cost");
 
     var totalPrice = 0;
     
-    var qty = $("#qty");
-    var price = $("#price");
-    var cost = qty.val() * $("#price").val();
-    $("#cost").text(cost);
+    var qty = document.querySelectorAll("#qty");
+    var price = document.querySelectorAll("#price");
+   // var cost = qty.val() * $("#price").val();
+   var cost = [6];
+
+   for(var i = 0; i < qty.length ; i++){
+       cost[i] = qty[i].value * price[i].value ;
+       costText[i].innerHTML = (cost[i]);
+   }
+    
+    // $("#cost").text(cost);
     calculateTotal(cost,30);
 
  }

@@ -34,7 +34,7 @@ body{
 
 
 .wrapper{
-
+    
     width: 100%;
 }
 .invoice-font{
@@ -72,7 +72,7 @@ body{
 
 .invoice-info{
     position: relative;
-    padding: 10% 10% 0 10%;
+    padding: 5% 10% 0 10%;
     
 }
 
@@ -114,34 +114,43 @@ table td {
     text-align: left;
 }
 .calc{
+    
     line-height: 1.5em;
-    text-align: right;
+    text-align: center;
 }
-
+.total-desc{
+    font-size: 0.9em;
+    font-weight: 600;
+}
+.sign-area{
+    position: absolute;
+    z-index: 22;
+}
 .invoice-sign{
     font-size: 0.8em;
 }
 
 .signholder{
     position: relative;
-    width: 150px;
-    height: 150px;
+    width: 80px;
+    height: 80px;
 }
 .invoice-bottom{
     margin-bottom : 0;
-    padding:12px 0 0 0;
-    position: relative;
+    /* padding:12px 0 0 0; */
+    padding: 14% 0 0 0;
+    position: absolute;
 }
 
 .invoice-bottom-logo{
     
-    position: absolute;    
+    position: relative;    
 }
 
 .invoice-footer-text{
     
     left: 55%;
-    margin-top: 5%;
+    bottom: 5%;
     position: absolute;
     font-size: 0.7em;    
     font-weight: bold;
@@ -149,11 +158,13 @@ table td {
     color: black;    
     text-align: center;
 }
-
+.invoice-input-desc{
+    width: 300px !important;
+    text-align: left !important;
+}
 .invoice-input-2{
 
-    width: auto;
- 
+    width: auto; 
     background-color: #fff;
     
     font-weight: 400;
@@ -181,7 +192,7 @@ table td {
     background-color: rgb(54,155,215);
     position: absolute;
     top:25px;
-    left: 25px;
+    right: 234x;
     width: 100px ;
     height: 40px;
     
@@ -284,3 +295,25 @@ table td {
     line-height: 60px; /* Vertically center the text there */
     background-color: rgb(13,109,166);
   }
+
+  .divider-100{
+      width: auto;
+      position: relative;
+      height: 100px;
+  }
+
+  
+  .divider-200{
+    width: auto;
+    position: relative;
+    height: 200px;
+}
+
+.action{
+    position: absolute;
+    display: inline-flex;
+}
+.action a{
+    margin: 2px;
+    font-size: 10px;
+}
