@@ -1,7 +1,8 @@
 # Invoice Editor
 
 
-`function print(divName) {
+```language
+function print(divName) {
     
     var contents = node.html();
         var frame1 = $('<iframe />');
@@ -28,4 +29,5 @@
             frame1.remove();
         }, 500);
  
-}`
+}
+```
