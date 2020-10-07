@@ -1,9 +1,16 @@
 # Invoice Editor
 
+**jsPDF**
+`<script src="https://unpkg.com/jspdf@1.5.3/dist/jspdf.min.js"></script>`
+
+**html2canvas**
+`<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-alpha.12/dist/html2canvas.js"></script>`
+
+
+----------
+
 
 **pdfconvert.js**
-
-
 
 **Initiate**
 
