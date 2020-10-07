@@ -1,7 +1,31 @@
 # Invoice Editor
 
-
 ```language
+
+var div = document.getElementById("invoiceholder");
+var node = $("#invoiceholder");
+var invoice_id = $("#invoiceID").val();
+var page = $("#invoiceholder");
+
+$(document).ready(function() {
+    var _export = document.querySelectorAll("#export");
+    var _print  = document.querySelectorAll("#print");
+
+    _export.forEach(element => {
+        element.addEventListener('click',function(e){           
+                convert();
+        });
+    });
+
+    _print.forEach(element => {
+        element.addEventListener('click',function(e){           
+                print(div);
+        });
+    });
+    
+
+});
+
 function print(divName) {
     
     var contents = node.html();
@@ -29,5 +53,28 @@ function print(divName) {
             frame1.remove();
         }, 500);
  
+}
+
+function convert(){
+    $("#convertToText").hide();
+
+    page.css("transform","scale("+ 1+")");
+
+    html2canvas(div)
+      .then((canvas) => {
+        
+        const imgData = canvas.toDataURL('../images/png');
+        const pdf = new jsPDF({
+          orientation: 'potrait',
+        });
+        const imgProps= pdf.getImageProperties(imgData);
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+        pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+        pdf.save('invoice_'+invoice_id+'.pdf');
+        $("#convertToText").show();
+      });
+    
+    
 }
 ```
