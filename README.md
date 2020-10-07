@@ -3,8 +3,11 @@
 
 **pdfconvert.js**
 
-```language
 
+
+**Initiate**
+
+```
 var div = document.getElementById("invoiceholder");
 var node = $("#invoiceholder");
 var invoice_id = $("#invoiceID").val();
@@ -28,7 +31,9 @@ $(document).ready(function() {
     
 
 });
-
+```
+**Print**
+```
 function print(divName) {
     
     var contents = node.html();
@@ -57,7 +62,9 @@ function print(divName) {
         }, 500);
  
 }
-
+```
+**Convertion**
+```
 function convert(){
     $("#convertToText").hide();
 
