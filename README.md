@@ -63,7 +63,7 @@ function print(divName) {
  
 }
 ```
-**Convertion**
+**Conversion**
 ```
 function convert(){
     $("#convertToText").hide();
