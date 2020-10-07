@@ -254,7 +254,9 @@ table td {
     text-align:center;
     box-shadow: 2px 2px 3px #999;
 }
-
+.floating-btn ul li a{
+    color: white;
+}
 
 .btn-float-right-bottom{
     margin-top:20px;
