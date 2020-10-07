@@ -59,6 +59,7 @@ function convert(){
 
     html2canvas(div)
       .then((canvas) => {
+        
         const imgData = canvas.toDataURL('../images/png');
         const pdf = new jsPDF({
           orientation: 'potrait',
