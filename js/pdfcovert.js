@@ -69,7 +69,14 @@ function convert(){
         const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
         pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
         pdf.save('invoice_'+invoice_id+'.pdf');
-        $("#convertToText").show();
+        // pdf.output("D:/invoice.pdf");
+
+        // var pdf =doc.output(); //returns raw body of resulting PDF returned as a string as per the plugin documentation.
+        // var data = new FormData();
+        // data.append(“data” , pdf);
+        // var xhr = new XMLHttpRequest();
+        // xhr.open( ‘post’, ‘test.php’, true ); //Post to php Script to save to server
+        // xhr.send(data);
       });
     
     
